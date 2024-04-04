@@ -1,0 +1,17 @@
+(footprint "Hole_3mm" (version 20221018) (generator pcbnew)
+  (layer "F.Cu")
+  (descr "Mounting Hole, 3mm")
+  (tags "HOLE 3MM")
+  (attr through_hole)
+  (fp_text reference "REF*" (at 0 -3.175) (layer "F.SilkS") hide
+      (effects (font (size 1.016 1.016) (thickness 0.2032)))
+    (tstamp 4022708b-7d1b-41be-82de-0706c028b807)
+  )
+  (fp_text value "VAL*" (at 0 3.175) (layer "F.SilkS") hide
+      (effects (font (size 1.016 0.9144) (thickness 0.2032) italic))
+    (tstamp 1bc597a2-f613-4924-811f-b986c7fbe2b1)
+  )
+  (fp_circle (center 0 0) (end 0 -2.286)
+    (stroke (width 0.254) (type solid)) (fill none) (layer "F.SilkS") (tstamp 2c7414e0-1d86-4bb3-82a2-f2b28acd5dae))
+  (pad "1" thru_hole circle (at 0 0) (size 4.064 4.064) (drill 3.048) (layers "*.Cu" "*.Mask") (tstamp 1b747ab5-a8c5-4474-8fa1-e56bf06b89d7))
+)
