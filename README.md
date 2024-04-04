@@ -77,7 +77,7 @@ The MSX joystick extension cable loose end is wired according to the following p
 
 ### Build2
 
-[Bill Of Materials (BoM)](https://html-preview.github.io/?url=https://raw.githubusercontent.com/herraa1/msx-joyblue-v2/main/hardware/kicad/msx-joyblue-v2-Build2/bom/ibom.html)
+[Bill Of Materials (BoM)](https://raw.githubusercontent.com/herraa1/msx-joyblue-v2/main/hardware/kicad/msx-joyblue-v2-build2/bom/ibom.html)
 
 The Build2 adapter mimics completely the standard MSX joystick behaviour:
 
@@ -94,7 +94,7 @@ This build uses discrete logic components to honor the pin8 signaling (four [74L
 
 ### Build2b
 
-[Bill Of Materials (BoM)](https://html-preview.github.io/?url=https://raw.githubusercontent.com/herraa1/msx-joyblue-v2/main/hardware/kicad/msx-joyblue-v2-Build2b/bom/ibom.html)
+[Bill Of Materials (BoM)](https://raw.githubusercontent.com/herraa1/msx-joyblue-v2/main/hardware/kicad/msx-joyblue-v2-build2b/bom/ibom.html)
 
 The Build2b is similar to Build2 but changes slightly some silkscreen text and graphics.
  
