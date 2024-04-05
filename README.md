@@ -209,15 +209,15 @@ This can happen too if the PTC fuses are tripping (see previous question).
 
 ## Compatibility Tests
 
-| **Model**                | **Adapter PCB v2 Build2** |
+| **Model**                | **Adapter PCB v2 Build2**  |
 |--------------------------|----------------------------|
-| Sony MSX HB-101P         |          test pending      |
-| Sony MSX HB-501F         |          test pending      |
+| Sony MSX HB-101P         |          OK                |
+| Sony MSX HB-501F         |          OK                |
 | Toshiba MSX HX-10        |          OK                |
-| Philips MSX2 VG-8235     |          test pending      |
-| Panasonic MSX2+ FS-A1WSX |          test pending      |
+| Philips MSX2 VG-8235     |          OK                |
+| Panasonic MSX2+ FS-A1WSX |          OK                |
 | Omega MSX2+              |          OK                |
-| MSXVR                    |          test pending      |
+| MSXVR                    |          OK                |
 
 ## References
 
