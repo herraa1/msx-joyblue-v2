@@ -134,13 +134,18 @@ To enable powering the msx-joyblue adapter from _Port 1_ and/or _Port 2_, the sw
 > [!NOTE]
 > A [1N5819 SMD Schottky diode](https://www.diodes.com/assets/Datasheets/1N5819HW.pdf) D3 is used to avoid leaking current from the msx-joyblue adapter to the MSX in case the msx-joyblue adapter is powered by USB while the _JOY PWR_ switch is ON.
 > Another [1N5819 SMD Schottky diode](https://www.diodes.com/assets/Datasheets/1N5819HW.pdf) D2 prevents backpowering the USB side from the MSX side.
-> And two Positive Temperature Coeficient (PTC) resettable fuses F1 and F2 of 50mA each protect the MSX general purpose I/O interfaces port 1 and port 2 from excess of current in case something goes horribly wrong on the msx-joyblue adapter side, aligning to the MSX specification.
+> And two Positive Temperature Coeficient (PTC) resettable fuses F1 and F2 of 50mA each protect the MSX general purpose I/O interfaces port 1 and port 2 from excess of current in case something goes horribly wrong on the msx-joyblue adapter side.
 
 To power the msx-joyblue adapter using the MSX general purpose I/O interfaces we must first understand how the PTC protections on the msx-joyblue adapter are implemented.
 
 The selected PTCs are rated for 50mA which is the so called Hold Current (the maximum current that can flow in normal operation). There is also the Trip Current (the minimum current necessary for the PTC to move to high-resistance state) which for the selected PTCs is around 100mA. Those thresholds are dependent on temperature and voltage. And to make things more undeterministic, the behaviour of the PTC when current is between those thresholds is undefined (it may trip or not).
 
 In normal operation and for a room temperature of around 25 degrees Celsius, the selected PTCs in practice never trip below 75mA.
+
+> [!NOTE]
+> Depending on the exact PTCs installed, the trip current may be slightly different and the adapter may trip at a different point. Unless you buy the PTCs from a reliable source, it is very difficult to know the exact PTC specifications. 
+>
+> Remember that the PTCs are provided as a safeguard in case something goes really wrong on the adapter, not to act as an exact current limiter to strictly comply with the 50mA per-port MSX specification.
 
 So **if our MSX computer can safely provide more than 50mA on each MSX general purpose I/O interface** (which is usually the case), we can connect both _Port 1_ and _Port 2_ to the MSX computer and turn on the SW5 _JOY PWR_ switch to power the msx-joyblue adapter. Note that we need to connect both ports even if we use just one Bluetooth gamepad, just to meet the power requirements.
 
