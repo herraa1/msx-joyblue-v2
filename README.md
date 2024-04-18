@@ -75,6 +75,12 @@ The MSX joystick extension cable loose end is wired according to the following p
 > Make sure you respect the correct pin order for msx-joyblue-v2.
 >
 
+### Recommended Build
+
+Please, use [msx-joyblue-v2 Build2](#build2) for making new boards if you want something field-tested.
+
+If you feel brave enough, go on and build [msx-joyblue-v2 Build2c](#build2c).
+
 ### Build2
 
 [Bill Of Materials (BoM)](https://html-preview.github.io/?url=https://raw.githubusercontent.com/herraa1/msx-joyblue-v2/main/hardware/kicad/msx-joyblue-v2-build2/bom/ibom.html)
@@ -94,17 +100,34 @@ This build uses discrete logic components to honor the pin8 signaling (four [74L
 
 ### Build2b
 
+> [!NOTE]
+> Build2b has been marked obsolete
+>
+
 [Bill Of Materials (BoM)](https://html-preview.github.io/?url=https://raw.githubusercontent.com/herraa1/msx-joyblue-v2/main/hardware/kicad/msx-joyblue-v2-build2b/bom/ibom.html)
 
 The Build2b is similar to Build2 but changes slightly some silkscreen text and graphics.
  
-|[<img src="images/msx-joyblue-v2-build2b-front-render.png" width="512"/>](images/msx-joyblue-v2-build2b-front-render.png)|
-|:--|
-|msx-joyblue-v2 Build2b front render|
+|[<img src="images/msx-joyblue-v2-build2b-front-render.png" width="256"/>](images/msx-joyblue-v2-build2b-front-render.png)|[<img src="images/msx-joyblue-v2-build2b-rear-render.png" width="256"/>](images/msx-joyblue-v2-build2b-rear-render.png)|
+|-|-|
+|msx-joyblue-v2 Build2b front render|msx-joyblue-v2 Build2b rear render|
 
-|[<img src="images/msx-joyblue-v2-build2b-rear-render.png" width="512"/>](images/msx-joyblue-v2-build2b-rear-render.png)|
+### Build2c
+
+[Bill Of Materials (BoM)](https://html-preview.github.io/?url=https://raw.githubusercontent.com/herraa1/msx-joyblue-v2/main/hardware/kicad/msx-joyblue-v2-build2c/bom/ibom.html)
+
+The Build2c adapter implements the following changes since Build2b:
+* move capacitor C3 and resistor R1 closer to the ESP32 EN pin
+* change C3 from 10uF to 22uF to give extra ramp up time to the 3V3 power rail
+
+|[<img src="images/msx-joyblue-v2-build2c-front-render.png" width="512"/>](images/msx-joyblue-v2-build2c-front-render.png)|
 |:--|
-|msx-joyblue-v2 Build2b rear render|
+|msx-joyblue-v2 Build2c front render|
+
+|[<img src="images/msx-joyblue-v2-build2c-rear-render.png" width="512"/>](images/msx-joyblue-v2-build2c-rear-render.png)|
+|:--|
+|msx-joyblue-v2 Build2c rear render|
+
 
 
 ## [Firmware](https://github.com/ricardoquesada/bluepad32/tree/main)
@@ -175,8 +198,8 @@ In summary, we can use the following options to power the msx-joyblue adapter (f
 
 | **LED**   | **State**      | **Indication** |
 |-----------|----------------|---------------|
-| _POWER_   | Off            | board is not receiving 5V power |
-| _POWER_   | Solid Red      | board is receiving 5V power     |
+| _POWER_   | Off            | board is not receiving 3V3 power |
+| _POWER_   | Solid Red      | board is receiving 3V3 power     |
 | _Port1_   | Off            | no gamepad is controlling _Port 1_ |
 | _Port1_   | Solid Green    | a connected gamepad is controlling _Port 1_ |
 | _Port1_   | Blinking Green | Every 1sec, PTCs are tripping, see [Troubleshooting](#troubleshooting) |
