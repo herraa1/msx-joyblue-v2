@@ -134,7 +134,7 @@ See [bluepad32 documentation](https://github.com/ricardoquesada/bluepad32/tree/m
 
 ## [Enclosure](enclosure/)
 
-A simple acrylic enclosure is included (but do not laser cut it yet, it has not been yet tested).
+A simple yet functional acrylic enclosure design is included.
 
 ## Powering the msx-joyblue adapter
 
