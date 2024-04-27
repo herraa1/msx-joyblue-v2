@@ -4,16 +4,6 @@
 
 Connect Bluetooth controllers to [MSX computers](https://www.msx.org/wiki/)
 
-> [!WARNING]
-> This is a work in progress project.
->
-> An adapter based on PCB v2 Build2 has been successfully built and tested using the bluepad32 firmware!
->
-> Adapter v2 Build2b has NOT yet been build, but changes only silkscreen
->
-> The proposed acrylic enclosure has NOT yet been tested! It will require adjustments on the joystick holes due to a change in the strain relief elements.
->
-
 ## Introduction
 
 The msx-joyblue is an adapter that allows connecting Bluetooth controllers to [MSX General Purpose I/O Interfaces](https://www.msx.org/wiki/General_Purpose_port) (aka joystick ports).
@@ -39,9 +29,9 @@ A two-sided printed circuit board (PCB) is used to put together all components:
 * A CH340C USB to UART chip, to make it easy to upgrade firmware on the ESP32 chip
 * A pair of S8050 NPN transistors to control the boot and enable signals of the ESP32 from the CH340C
 * An AMS1117-3.3 regulator to convert the 5V from either the USB port or joystick ports to the 3.3V required by the ESP32 chip
-* Four 74LS03 quad 2-input NAND gates with open collectors to completely mimic the standard MSX joystick behaviour
+* Four 74LS03 quad 2-input NAND gates with open collectors to completely mimic the standard MSX joystick behavior
 * A pair of PTC fuses to minimize damage to the MSX computer in case something goes wrong with the board
-* Several additional required components (diodes, leds, resistors, ceramic capacitors and an electrolitic capacitor)
+* Several additional required components (diodes, leds, resistors, ceramic capacitors and an electrolytic capacitor)
 * PH2.0 connectors are used to connect cable extensions
 * A 2.0 pitch I2C header is added for future extensions
 * Jumpers are provided to enable different power options
@@ -77,31 +67,34 @@ The MSX joystick extension cable loose end is wired according to the following p
 
 ### Recommended Build
 
-Please, use [msx-joyblue-v2 Build2](#build2) for making new boards if you want something field-tested.
+Please, use [msx-joyblue-v2 Build2c](#build2c) for making new boards.
 
-If you feel brave enough, go on and build [msx-joyblue-v2 Build2c](#build2c).
+You can find ready to order PCBs at the [PCBWay community site](https://www.pcbway.com/project/shareproject/msx_joyblue_v2_build2c_caa88943.html).
+
+<a href="https://www.pcbway.com/project/shareproject/msx_joyblue_v2_build2c_caa88943.html"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" width="96" alt="PCB from PCBWay" /></a>
+
 
 ### Build2
 
 [Bill Of Materials (BoM)](https://html-preview.github.io/?url=https://raw.githubusercontent.com/herraa1/msx-joyblue-v2/main/hardware/kicad/msx-joyblue-v2-build2/bom/ibom.html)
 
-The Build2 adapter mimics completely the standard MSX joystick behaviour:
+The Build2 adapter mimics completely the standard MSX joystick behavior:
 
 * When pin8 is HIGH, the adapter puts all stick and triggers signals in high impedance mode irrespective of their status (as if stick and triggers were not hold in the standard MSX joystick schematic), which become HIGH on the MSX side via the MSX PSG related circuitry pull-ups (matching the expected behavior)
 * When pin8 is LOW
   * if a stick direction or trigger is hold, the corresponding signal is pulled down to GND causing it to be LOW (matching the expected behavior)
-  * if a stick direction or trigger is not hold, the corresponding signal is put in high impedance mode, which becomes HIGH on the MSX side via the MSX PSG related circuitry pull-ups (matching the expected behaviour)
+  * if a stick direction or trigger is not hold, the corresponding signal is put in high impedance mode, which becomes HIGH on the MSX side via the MSX PSG related circuitry pull-ups (matching the expected behavior)
 
 This build uses discrete logic components to honor the pin8 signaling (four [74LS03DR quad 2-input positive-nand gates with open collector outputs](https://www.ti.com/lit/ds/symlink/sn74ls03.pdf)) and uses open collector outputs which makes the adapter safer [^3] than the standard MSX joystick schematic depicted in the MSX Technical Data Book, as it avoids a series of undesired conditions that can lead to bus contention/short circuits.
 
-|[<img src="images/msx-joyblue-v2-build2-first-prototype-without-enclosure.png" width="512"/>](images/msx-joyblue-v2-build2-first-prototype-without-enclosure.png)|
-|:--|
-|msx-joyblue-v2 Build2 first prototype|
+|[<img src="images/msx-joyblue-v2-build2-first-prototype-without-enclosure.png" width="512"/>](images/msx-joyblue-v2-build2-first-prototype-without-enclosure.png)|[<img src="images/msx-joyblue-v2-build2-first-prototype-in-acrylic-case.png" width="512"/>](images/msx-joyblue-v2-build2-first-prototype-in-acrylic-case.png)|
+|-|-|
+|msx-joyblue-v2 Build2 first prototype|msx-joyblue-v2 Build2 first prototype within acrylic case|
 
 ### Build2b
 
 > [!NOTE]
-> Build2b has been marked obsolete
+> Build2b was never fabricated and has been marked obsolete.
 >
 
 [Bill Of Materials (BoM)](https://html-preview.github.io/?url=https://raw.githubusercontent.com/herraa1/msx-joyblue-v2/main/hardware/kicad/msx-joyblue-v2-build2b/bom/ibom.html)
@@ -128,7 +121,9 @@ The Build2c adapter implements the following changes since Build2b:
 |:--|
 |msx-joyblue-v2 Build2c rear render|
 
-
+|[<img src="images/msx-joyblue-v2-build2c-pcbs-front-and-rear.png" width="512"/>](images/msx-joyblue-v2-build2c-pcbs-front-and-rear.png)|
+|:--|
+|msx-joyblue-v2 Build2c PCBs front and rear|
 
 ## [Firmware](https://github.com/ricardoquesada/bluepad32/tree/main)
 
@@ -161,7 +156,7 @@ To enable powering the msx-joyblue adapter from _Port 1_ and/or _Port 2_, the sw
 
 To power the msx-joyblue adapter using the MSX general purpose I/O interfaces we must first understand how the PTC protections on the msx-joyblue adapter are implemented.
 
-The selected PTCs are rated for 50mA which is the so called Hold Current (the maximum current that can flow in normal operation). There is also the Trip Current (the minimum current necessary for the PTC to move to high-resistance state) which for the selected PTCs is around 100mA. Those thresholds are dependent on temperature and voltage. And to make things more undeterministic, the behaviour of the PTC when current is between those thresholds is undefined (it may trip or not).
+The selected PTCs are rated for 50mA which is the so called Hold Current (the maximum current that can flow in normal operation). There is also the Trip Current (the minimum current necessary for the PTC to move to high-resistance state) which for the selected PTCs is around 100mA. Those thresholds are dependent on temperature and voltage. And to make things more undeterministic, the behavior of the PTC when current is between those thresholds is undefined (it may trip or not).
 
 In normal operation and for a room temperature of around 25 degrees Celsius, the selected PTCs in practice never trip below 75mA.
 
@@ -232,15 +227,15 @@ This can happen too if the PTC fuses are tripping (see previous question).
 
 ## Compatibility Tests
 
-| **Model**                | **Adapter PCB v2 Build2**  |
-|--------------------------|----------------------------|
-| Sony MSX HB-101P         |          OK                |
-| Sony MSX HB-501F         |          OK                |
-| Toshiba MSX HX-10        |          OK                |
-| Philips MSX2 VG-8235     |          OK                |
-| Panasonic MSX2+ FS-A1WSX |          OK                |
-| Omega MSX2+              |          OK                |
-| MSXVR                    |          OK                |
+| **Model**                | **Adapter PCB v2 Build2** |
+|--------------------------|---------------------------|
+| Sony MSX HB-101P         |          OK               |
+| Sony MSX HB-501F         |          OK               |
+| Toshiba MSX HX-10        |          OK               |
+| Philips MSX2 VG-8235     |          OK               |
+| Panasonic MSX2+ FS-A1WSX |          OK               |
+| Omega MSX2+              |          OK               |
+| MSXVR                    |          OK               |
 
 ## References
 
