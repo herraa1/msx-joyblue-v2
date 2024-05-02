@@ -74,7 +74,7 @@ You can find ready to order PCBs at the [PCBWay community site](https://www.pcbw
 <a href="https://www.pcbway.com/project/shareproject/msx_joyblue_v2_build2c_caa88943.html"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" width="96" alt="PCB from PCBWay" /></a>
 
 
-### Build2
+### [Build2](hardware/kicad/msx-joyblue-v2-build2)
 
 [Bill Of Materials (BoM)](https://html-preview.github.io/?url=https://raw.githubusercontent.com/herraa1/msx-joyblue-v2/main/hardware/kicad/msx-joyblue-v2-build2/bom/ibom.html)
 
@@ -91,7 +91,7 @@ This build uses discrete logic components to honor the pin8 signaling (four [74L
 |-|-|
 |msx-joyblue-v2 Build2 first prototype|msx-joyblue-v2 Build2 first prototype within acrylic case|
 
-### Build2b
+### [Build2b](hardware/kicad/msx-joyblue-v2-build2b)
 
 > [!NOTE]
 > Build2b was never fabricated and has been marked obsolete.
@@ -105,7 +105,7 @@ The Build2b is similar to Build2 but changes slightly some silkscreen text and g
 |-|-|
 |msx-joyblue-v2 Build2b front render|msx-joyblue-v2 Build2b rear render|
 
-### Build2c
+### [Build2c](hardware/kicad/msx-joyblue-v2-build2c)
 
 [Bill Of Materials (BoM)](https://html-preview.github.io/?url=https://raw.githubusercontent.com/herraa1/msx-joyblue-v2/main/hardware/kicad/msx-joyblue-v2-build2c/bom/ibom.html)
 
@@ -236,6 +236,10 @@ This can happen too if the PTC fuses are tripping (see previous question).
 | Panasonic MSX2+ FS-A1WSX |          OK               |
 | Omega MSX2+              |          OK               |
 | MSXVR                    |          OK               |
+
+## Build Instructions
+
+Follow these [Build instructions](Build.md) in order to assemble the msx-joyblue v2 adapter.
 
 ## References
 
