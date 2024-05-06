@@ -97,14 +97,8 @@ This build uses discrete logic components to honor the pin8 signaling (four [74L
 > Build2b was never fabricated and has been marked obsolete.
 >
 
-[Bill Of Materials (BoM)](https://html-preview.github.io/?url=https://raw.githubusercontent.com/herraa1/msx-joyblue-v2/main/hardware/kicad/msx-joyblue-v2-build2b/bom/ibom.html)
-
 The Build2b is similar to Build2 but changes slightly some silkscreen text and graphics.
  
-|[<img src="images/msx-joyblue-v2-build2b-front-render.png" width="256"/>](images/msx-joyblue-v2-build2b-front-render.png)|[<img src="images/msx-joyblue-v2-build2b-rear-render.png" width="256"/>](images/msx-joyblue-v2-build2b-rear-render.png)|
-|-|-|
-|msx-joyblue-v2 Build2b front render|msx-joyblue-v2 Build2b rear render|
-
 ### [Build2c](hardware/kicad/msx-joyblue-v2-build2c)
 
 [Bill Of Materials (BoM)](https://html-preview.github.io/?url=https://raw.githubusercontent.com/herraa1/msx-joyblue-v2/main/hardware/kicad/msx-joyblue-v2-build2c/bom/ibom.html)
@@ -113,17 +107,13 @@ The Build2c adapter implements the following changes since Build2b:
 * move capacitor C3 and resistor R1 closer to the ESP32 EN pin
 * change C3 from 10uF to 22uF to give extra ramp up time to the 3V3 power rail
 
-|[<img src="images/msx-joyblue-v2-build2c-front-render.png" width="512"/>](images/msx-joyblue-v2-build2c-front-render.png)|
-|:--|
-|msx-joyblue-v2 Build2c front render|
-
-|[<img src="images/msx-joyblue-v2-build2c-rear-render.png" width="512"/>](images/msx-joyblue-v2-build2c-rear-render.png)|
-|:--|
-|msx-joyblue-v2 Build2c rear render|
-
-|[<img src="images/msx-joyblue-v2-build2c-pcbs-front-and-rear.png" width="512"/>](images/msx-joyblue-v2-build2c-pcbs-front-and-rear.png)|
+[<img src="images/msx-joyblue-v2-build2c-pcbs-front-and-rear.png" width="512"/>](images/msx-joyblue-v2-build2c-pcbs-front-and-rear.png)|
 |:--|
 |msx-joyblue-v2 Build2c PCBs front and rear|
+
+|[<img src="images/msx-joyblue-v2-build2c-populated.png" width="512"/>](images/msx-joyblue-v2-build2c-populated.png)|
+|:--|
+|msx-joyblue-v2 Build2c populated PCB|
 
 ## [Firmware](https://github.com/ricardoquesada/bluepad32/tree/main)
 
@@ -199,7 +189,7 @@ In summary, we can use the following options to power the msx-joyblue adapter (f
 | _JOYPWR_   | On             | board electronics get power from MSX computer via joystick port(s)       |
 
 > [!NOTE]
-> If you plug a +5V USB power supply to the USB mini connector, the adapter will turn on unconditionally irrespective of the _MSXPOWER_ switch position.
+> If you plug a +5V USB power supply to the USB mini connector, the adapter will turn on unconditionally irrespective of the _JOYPWR_ switch position.
 >
 
 | **Button**   | **Description**                                                                             |
