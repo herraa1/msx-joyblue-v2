@@ -189,7 +189,28 @@ In summary, we can use the following options to power the msx-joyblue adapter (f
   * turn on the SW5 _JOY PWR_ switch
   * connect _Port 1_ or _Port 2_ to a MSX general purpose I/O interface
 
+## Switches and Buttons
+
+[<img src="images/msx-joyblue-v2-build2-buttons.png" width="512"/>](images/msx-joyblue-v2-build2-buttons.png)
+
+| **Switch** | **State**      | **Description**                                                          |
+|------------|----------------|--------------------------------------------------------------------------|
+| _JOYPWR_   | Off            | power from MSX computer via joystick port(s) is off (except logic gates) |
+| _JOYPWR_   | On             | board electronics get power from MSX computer via joystick port(s)       |
+
+> [!NOTE]
+> If you plug a +5V USB power supply to the USB mini connector, the adapter will turn on unconditionally irrespective of the _MSXPOWER_ switch position.
+>
+
+| **Button**   | **Description**                                                                             |
+|--------------|---------------------------------------------------------------------------------------------|
+| MODE         | change the [operation mode](https://github.com/ricardoquesada/unijoysticle2/blob/main/docs/user_guide.md#unijoysticle-buttons-and-leds) of the connected gamepad between "basic mode" and "twin stick mode" |
+| SWAP         | swap connected gamepads between MSX joystick ports                                          |
+| RESET        | restart the firmware, gamepads get disconnected                                             |
+
 ## LED indicators
+
+[<img src="images/msx-joyblue-v2-build2-leds.png" width="768"/>](images/msx-joyblue-v2-build2-leds.png)
 
 | **LED**   | **State**      | **Indication** |
 |-----------|----------------|---------------|
@@ -227,15 +248,15 @@ This can happen too if the PTC fuses are tripping (see previous question).
 
 ## Compatibility Tests
 
-| **Model**                | **Adapter PCB v2 Build2** |
-|--------------------------|---------------------------|
-| Sony MSX HB-101P         |          OK               |
-| Sony MSX HB-501F         |          OK               |
-| Toshiba MSX HX-10        |          OK               |
-| Philips MSX2 VG-8235     |          OK               |
-| Panasonic MSX2+ FS-A1WSX |          OK               |
-| Omega MSX2+              |          OK               |
-| MSXVR                    |          OK               |
+| **Model**                | **Adapter PCB v2 Build2** | **Adapter PCB v2 Build2c** |
+|--------------------------|---------------------------|----------------------------|
+| Sony MSX HB-101P         |          OK               |           OK               |
+| Sony MSX HB-501F         |          OK               |           OK               |
+| Toshiba MSX HX-10        |          OK               |           OK               |
+| Philips MSX2 VG-8235     |          OK               |           OK               |
+| Panasonic MSX2+ FS-A1WSX |          OK               |           OK               |
+| Omega MSX2+              |          OK               |           OK               |
+| MSXVR                    |          OK               |           OK               |
 
 ## Build Instructions
 
