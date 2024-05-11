@@ -86,6 +86,77 @@ When you have the test circuit ready, push down and hold the top of the SOP-16 t
 
 To remove the chip from the SOP-16 to DIP-16 adapter you will need to push and hold again the top of the adapter, lift gently the chip using tweezers and then release the top of the adapter when it is empty.
 
+### ESP32-WROOM-32E
+
+The ESP32-WROOM-32E is a powerful Wi-Fi + Bluetooth + Bluetooth LE microcontroller unit module with an embedded PCB antenna.
+
+Testing a ESP32-WROOM-32E can be achieved with a [small ready-to-use test jig](https://www.aliexpress.com/item/1005005850152605.html).
+
+|[<img src="images/esp32-test-jig.png" width="384"/>](images/esp32-test-jig.png)|
+|:--|
+|ESP32-WROOM-32E test jig|
+
+To test a ESP32-WROOM-32E:
+* Insert the ESP32-WROOM-32E into the test jig making sure that all pads are aligned with the test jig clips.
+
+  You need to press firmly the module until it gets hold by the clips of the test jig, without breaking any clips.
+* Insert a micro-USB cable into the micro-USB connector of the test jig and connect it to your PC
+* Press the power button to turn on the test jig.
+* Check that the USB to serial adapter shows up on the list of USB devices of your PC
+
+<pre>
+$ dmesg | tail -n 6
+[  940.416575] usb 3-3.1: new full-speed USB device number <b>40</b> using xhci_hcd
+[  940.517893] usb 3-3.1: New USB device found, idVendor=<b>1a86</b>, idProduct=<b>55d4</b>, bcdDevice= 4.44
+[  940.517900] usb 3-3.1: New USB device strings: Mfr=0, Product=2, SerialNumber=3
+[  940.517904] usb 3-3.1: Product: <b>USB Single Serial</b>
+[  940.517908] usb 3-3.1: SerialNumber: XXXXXXXXXX
+[  940.568222] cdc_acm 3-3.1:1.0: <b>ttyACM0: USB ACM device</b>
+</pre>
+
+<pre>
+$ lsusb
+Bus 004 Device 004: ID 0bda:8153 Realtek Semiconductor Corp. RTL8153 Gigabit Ethernet Adapter
+Bus 004 Device 003: ID 0bda:0483 Realtek Semiconductor Corp. 4-Port USB 3.0 Hub
+Bus 004 Device 002: ID 0bda:0483 Realtek Semiconductor Corp. 4-Port USB 3.0 Hub
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 006: ID 0bda:1100 Realtek Semiconductor Corp. USB2.0 HID
+Bus 003 Device 005: ID 1532:008a Razer USA, Ltd RZ01-0325, Gaming Mouse [Viper Mini]
+Bus 003 Device 004: ID 1a2c:b58f China Resource Semico Co., Ltd BladeMaster TE 88K
+Bus 003 Device 003: ID 0bda:5483 Realtek Semiconductor Corp. 4-Port USB 2.0 Hub
+Bus 003 Device 002: ID 0bda:5483 Realtek Semiconductor Corp. 4-Port USB 2.0 Hub
+<b>Bus 003 Device 040: ID 1a86:55d4 QinHeng Electronics USB Single Serial</b>
+Bus 003 Device 024: ID 050d:0304 Belkin Components FSU304 USB 2.0 - 4 Ports Hub
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+</pre>
+
+* Then finally use esptool to request information about the chip.
+
+  If the chip works fine it will be properly detected and will appear as ESP32-D0WD-V3 or ESP32-D0WDR2-V3.
+
+<pre>
+$ <b>esptool.py chip_id</b>
+esptool.py v3.3.4-dev
+Found 1 serial ports
+Serial port /dev/ttyACM0
+Connecting....
+Detecting chip type... Unsupported detection protocol, switching and trying again...
+Connecting.......
+Detecting chip type... ESP32
+<b>Chip is ESP32-D0WD-V3 (revision v3.1)</b>
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 01:23:45:67:89:ab
+Uploading stub...
+Running stub...
+Stub running...
+Warning: ESP32 has no Chip ID. Reading MAC instead.
+MAC: 01:23:45:67:89:ab
+Hard resetting via RTS pin...
+</pre>
+
 ## Board assembly instructions
 
 [<img src="images/msx-joyblue-v2-build2-board-overview.png" width="512"/>](images/msx-joyblue-v2-build2-board-overview.png)
