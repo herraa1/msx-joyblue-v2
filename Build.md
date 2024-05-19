@@ -263,7 +263,7 @@ This is the detailed procedure to prepare each of the two DE9 cable extensions:
 
 2. Use the wire stripper to remove about 5cm of the cable insulation at the cut end, exposing the 9 internal wires.
 
-   TBC
+[<img src="images/de9-cable-strip-edge.png" height="384"/>](de9-cable-strip-edge.png)
 
 3. Insert the cable gland at the cut end of the extension cable.
 
@@ -277,11 +277,20 @@ This is the detailed procedure to prepare each of the two DE9 cable extensions:
 
    4.1. Use the wire stripper to remove about 2-3mm of the individual cable insulation
 
+[<img src="images/de9-cable-wire-strip-edge.png" height="384"/>](images/de9-cable-wire-strip-edge.png) [<img src="images/de9-cable-wire-strip-edge-2.png" height="384"/>](images/de9-cable-wire-strip-edge-2.png)
+
    4.2. Fold the exposed copper wire over itself at half the distance, leaving just 1-1.5mm of exposed copper cable length at the end (this is to make enough copper available to the central pin wings of the PH2.0 metal pins).
+
+[<img src="images/de9-cable-wire-fold-copper.png" height="384"/>](images/de9-cable-wire-fold-copper.png)
 
    4.3. Crimp a PH2.0 metal pin to the end of the individual cable, making sure the metal pin's center wings crimp the copper and the rear wings crimp the cable insulation.
 
-   TBC
+[<img src="images/ph20-crimp-alignment.png" height="384"/>](images/ph20-crimp-alignment.png)
+
+[<img src="images/de9-cable-ph20-metal-pin-prepare.png" height="384"/>](images/de9-cable-ph20-metal-pin-prepare.png) [<img src="images/de9-cable-ph20-metal-pin-clearance.png" height="384"/>](images/de9-cable-ph20-metal-pin-clearance.png) [<img src="images/de9-cable-ph20-metal-pin-insert-wire.png" height="384"/>](images/de9-cable-ph20-metal-pin-insert-wire.png)
+
+[<img src="images/ph20-crimp-done.png" height="384"/>](images/ph20-crimp-done.png)
+
 
 5. Verify with a continuity tester or digital multimeter that each wire makes a proper connection to its associated DE9 pin.
 
