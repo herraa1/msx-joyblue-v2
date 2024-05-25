@@ -157,6 +157,31 @@ MAC: 01:23:45:67:89:ab
 Hard resetting via RTS pin...
 </pre>
 
+### SN74LS03DR
+
+The SN74LS03DR are quad 2-input NAND gates with open collector outputs.
+
+If you own a TL866II+ programmer you can easily verify that the 74LS03 chips are working correctly.
+
+Use the same SOP-16 to DIP-16 adapter that you used to test the CH340C, but keep in mind that the SN74LS03DR only has 14 pins so you need to properly align the IC leaving 2 pairs of pins unconnected.
+
+Insert the DIP-16 adapter into the TL866II+ connector making sure that pin 1 is aligned correctly (use the engraved orientation diagram as a reference).
+
+TBC
+
+Then use the minipro software to test the logic gates.
+
+<pre>
+$ <b>./minipro -p 7403 -T</b>
+Found TL866II+ 04.2.132 (0x284)
+      1  2  3  4  5  6  7  8  9  10 11 12 13 14
+0000: 0  0  Z  0  0  Z  G  Z  0  0  Z  0  0  V
+0001: 1  0  Z  1  0  Z  G  Z  1  0  Z  1  0  V
+0002: 0  1  Z  0  1  Z  G  Z  0  1  Z  0  1  V
+0003: 1  1  L  1  1  L  G  L  1  1  L  1  1  V
+<b>Logic test successful.</b>
+</pre>
+
 ## Board assembly instructions
 
 [<img src="images/msx-joyblue-v2-build2-board-overview.png" width="512"/>](images/msx-joyblue-v2-build2-board-overview.png)
