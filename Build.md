@@ -51,7 +51,7 @@ I used the following tools and materials to assemble the msx-joyblue v2 board:
 ## Testing the Integrated Circuits
 
 It is highly recommended to test the integrated circuits before soldering them, specially if you buy chips from cheap Asian stores.
-Otherwise, you'll need to desolder any non-working chip after soldering them on the PCB and realizing they really doesn't work.
+Otherwise, you'll need to desolder any non-working chip after soldering them on the PCB and realizing they really don't work.
 
 ### CH340C
 
@@ -167,7 +167,9 @@ Use the same SOP-16 to DIP-16 adapter that you used to test the CH340C, but keep
 
 Insert the DIP-16 adapter into the TL866II+ connector making sure that pin 1 is aligned correctly (use the engraved orientation diagram as a reference).
 
-TBC
+|[<img src="images/74ls03-test-setup.png" width="512"/>](images/74ls03-test-setup.png)|
+|:--|
+|SN74LS03DR test setup|
 
 Then use the minipro software to test the logic gates.
 
