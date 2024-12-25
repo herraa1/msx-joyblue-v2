@@ -74,31 +74,6 @@ You can find ready to order PCBs at the [PCBWay community site](https://www.pcbw
 <a href="https://www.pcbway.com/project/shareproject/msx_joyblue_v2_build2c_caa88943.html"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" width="96" alt="PCB from PCBWay" /></a>
 
 
-### [Build2](hardware/kicad/msx-joyblue-v2-build2)
-
-[Bill Of Materials (BoM)](https://html-preview.github.io/?url=https://raw.githubusercontent.com/herraa1/msx-joyblue-v2/main/hardware/kicad/msx-joyblue-v2-build2/bom/ibom.html)
-
-The Build2 adapter mimics completely the standard MSX joystick behavior:
-
-* When pin8 is HIGH, the adapter puts all stick and triggers signals in high impedance mode irrespective of their status (as if stick and triggers were not hold in the standard MSX joystick schematic), which become HIGH on the MSX side via the MSX PSG related circuitry pull-ups (matching the expected behavior)
-* When pin8 is LOW
-  * if a stick direction or trigger is hold, the corresponding signal is pulled down to GND causing it to be LOW (matching the expected behavior)
-  * if a stick direction or trigger is not hold, the corresponding signal is put in high impedance mode, which becomes HIGH on the MSX side via the MSX PSG related circuitry pull-ups (matching the expected behavior)
-
-This build uses discrete logic components to honor the pin8 signaling (four [74LS03DR quad 2-input positive-nand gates with open collector outputs](https://www.ti.com/lit/ds/symlink/sn74ls03.pdf)) and uses open collector outputs which makes the adapter safer [^3] than the standard MSX joystick schematic depicted in the MSX Technical Data Book, as it avoids a series of undesired conditions that can lead to bus contention/short circuits.
-
-|[<img src="images/msx-joyblue-v2-build2-first-prototype-without-enclosure.png" width="512"/>](images/msx-joyblue-v2-build2-first-prototype-without-enclosure.png)|[<img src="images/msx-joyblue-v2-build2-first-prototype-in-acrylic-case.png" width="512"/>](images/msx-joyblue-v2-build2-first-prototype-in-acrylic-case.png)|
-|-|-|
-|msx-joyblue-v2 Build2 first prototype|msx-joyblue-v2 Build2 first prototype within acrylic case|
-
-### [Build2b](hardware/kicad/msx-joyblue-v2-build2b)
-
-> [!NOTE]
-> Build2b was never fabricated and has been marked obsolete.
->
-
-The Build2b is similar to Build2 but changes slightly some silkscreen text and graphics.
- 
 ### [Build2c](hardware/kicad/msx-joyblue-v2-build2c)
 
 [Bill Of Materials (BoM)](https://html-preview.github.io/?url=https://raw.githubusercontent.com/herraa1/msx-joyblue-v2/main/hardware/kicad/msx-joyblue-v2-build2c/bom/ibom.html)
@@ -114,6 +89,31 @@ The Build2c adapter implements the following changes since Build2b:
 |[<img src="images/msx-joyblue-v2-build2c-populated.png" width="512"/>](images/msx-joyblue-v2-build2c-populated.png)|
 |:--|
 |msx-joyblue-v2 Build2c populated PCB|
+
+### Build2b
+
+> [!NOTE]
+> Build2b was never fabricated and has been marked obsolete. Use the [recommended build](#recommended-build) instead.
+
+The Build2b is similar to Build2 but changes slightly some silkscreen text and graphics.
+
+### Build2
+
+> [!NOTE]
+> Build2 has been marked obsolete. Use the [recommended build](#recommended-build) instead.
+
+The Build2 adapter mimics completely the standard MSX joystick behavior:
+
+* When pin8 is HIGH, the adapter puts all stick and triggers signals in high impedance mode irrespective of their status (as if stick and triggers were not hold in the standard MSX joystick schematic), which become HIGH on the MSX side via the MSX PSG related circuitry pull-ups (matching the expected behavior)
+* When pin8 is LOW
+  * if a stick direction or trigger is hold, the corresponding signal is pulled down to GND causing it to be LOW (matching the expected behavior)
+  * if a stick direction or trigger is not hold, the corresponding signal is put in high impedance mode, which becomes HIGH on the MSX side via the MSX PSG related circuitry pull-ups (matching the expected behavior)
+
+This build uses discrete logic components to honor the pin8 signaling (four [74LS03DR quad 2-input positive-nand gates with open collector outputs](https://www.ti.com/lit/ds/symlink/sn74ls03.pdf)) and uses open collector outputs which makes the adapter safer [^3] than the standard MSX joystick schematic depicted in the MSX Technical Data Book, as it avoids a series of undesired conditions that can lead to bus contention/short circuits.
+
+|[<img src="images/msx-joyblue-v2-build2-first-prototype-without-enclosure.png" width="512"/>](images/msx-joyblue-v2-build2-first-prototype-without-enclosure.png)|[<img src="images/msx-joyblue-v2-build2-first-prototype-in-acrylic-case.png" width="512"/>](images/msx-joyblue-v2-build2-first-prototype-in-acrylic-case.png)|
+|-|-|
+|msx-joyblue-v2 Build2 first prototype|msx-joyblue-v2 Build2 first prototype within acrylic case|
 
 ## [Firmware](https://github.com/ricardoquesada/bluepad32/tree/main)
 
