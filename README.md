@@ -69,14 +69,14 @@ The MSX joystick extension cable loose end is wired according to the following p
 
 Please, use [msx-joyblue-v2 Build2c](#build2c) for making new boards.
 
-You can find ready to order PCBs at the [PCBWay community site](https://www.pcbway.com/project/shareproject/msx_joyblue_v2_build2c_caa88943.html).
+You can find ready to order PCBs and the complete BoM at the [PCBWay community site](https://www.pcbway.com/project/shareproject/msx_joyblue_v2_build2c_caa88943.html).
 
 <a href="https://www.pcbway.com/project/shareproject/msx_joyblue_v2_build2c_caa88943.html"><img src="https://www.pcbway.com/project/img/images/frompcbway-1220.png" width="96" alt="PCB from PCBWay" /></a>
 
 
 ### [Build2c](hardware/kicad/msx-joyblue-v2-build2c)
 
-[Bill Of Materials (BoM)](https://html-preview.github.io/?url=https://raw.githubusercontent.com/herraa1/msx-joyblue-v2/main/hardware/kicad/msx-joyblue-v2-build2c/bom/ibom.html)
+[Interactive Bill Of Materials (BoM)](https://html-preview.github.io/?url=https://raw.githubusercontent.com/herraa1/msx-joyblue-v2/main/hardware/kicad/msx-joyblue-v2-build2c/bom/ibom.html)
 
 The Build2c adapter implements the following changes since Build2b:
 * move capacitor C3 and resistor R1 closer to the ESP32 EN pin
