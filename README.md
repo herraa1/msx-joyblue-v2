@@ -238,15 +238,17 @@ This can happen too if the PTC fuses are tripping (see previous question).
 
 ## Compatibility Tests
 
-| **Model**                | **Adapter PCB v2 Build2** | **Adapter PCB v2 Build2c** |
-|--------------------------|---------------------------|----------------------------|
-| Sony MSX HB-101P         |          OK               |           OK               |
-| Sony MSX HB-501F         |          OK               |           OK               |
-| Toshiba MSX HX-10        |          OK               |           OK               |
-| Philips MSX2 VG-8235     |          OK               |           OK               |
-| Panasonic MSX2+ FS-A1WSX |          OK               |           OK               |
-| Omega MSX2+              |          OK               |           OK               |
-| MSXVR                    |          OK               |           OK               |
+| **Model**                                                               | **Adapter PCB v2 Build2c** |
+|-------------------------------------------------------------------------|----------------------------|
+| [Sony MSX HB-101P](https://www.msx.org/wiki/Sony_HB-101P)               |           OK               |
+| [Sony MSX HB-501F](https://www.msx.org/wiki/Sony_HB-501F)               |           OK               |
+| [Toshiba MSX HX-10P](https://www.msx.org/wiki/Toshiba_HX-10P)           |           OK               |
+| [Philips MSX2 VG-8235](https://www.msx.org/wiki/Philips_VG-8235)        |           OK               |
+| [Panasonic MSX2+ FS-A1WSX](https://www.msx.org/wiki/Panasonic_FS-A1WSX) |           OK               |
+| [Omega MSX2+](https://github.com/skiselev/omega)                        |           OK               |
+| [MSXVR](https://msxvr.com/en/)                                          |           OK               |
+| [Tides Rider](https://genami.shop/products/tides-rider-hdk)             |           OK               |
+| [JFF-TMSHAT](https://github.com/herraa1/JFF-TMSHAT)                     |           OK               |
 
 ## Build Instructions
 
